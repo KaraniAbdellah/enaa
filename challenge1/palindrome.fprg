@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="palindrome"/>
+        <attribute name="authors" value="zakar"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-17 09:53:54 AM"/>
+        <attribute name="created" value="emFrYXI7TU9VTU5JOzIwMjQtMTAtMTc7MDk6Mzc6MzYgQU07MjI4MA=="/>
+        <attribute name="edited" value="emFrYXI7TU9VTU5JOzIwMjQtMTAtMTc7MDk6NTM6NTQgQU07MTsyMzg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, p, lastDigit, temp" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <assign variable="temp" expression="n"/>
+            <assign variable="p" expression="0"/>
+            <while expression="n != 0">
+                <assign variable="lastDigit" expression="n % 10"/>
+                <assign variable="p" expression="p * 10 + lastDigit"/>
+                <assign variable="n" expression="n / 10"/>
+            </while>
+            <if expression="temp == p">
+                <then>
+                    <output expression="1" newline="True"/>
+                </then>
+                <else>
+                    <output expression="-1" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="algo1"/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-15 03:15:17 PM"/>
+        <attribute name="created" value="dXNlcjtERVNLVE9QLTVWRkE3NTk7MjAyNC0xMC0xNTswMjozNDoxNyBQTTsyNzQ1"/>
+        <attribute name="edited" value="dXNlcjtERVNLVE9QLTVWRkE3NTk7MjAyNC0xMC0xNTswMzoxNToxNyBQTTsxOzI4NTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;entre nomber n:&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n mod 2 = 0">
+                <then>
+                    <output expression="&quot;pair&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;impair&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

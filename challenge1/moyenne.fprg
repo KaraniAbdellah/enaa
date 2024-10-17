@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="moyenne"/>
+        <attribute name="authors" value="zakar"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-17 09:36:15 AM"/>
+        <attribute name="created" value="emFrYXI7TU9VTU5JOzIwMjQtMTAtMTc7MDk6MzE6MTUgQU07MjI3MQ=="/>
+        <attribute name="edited" value="emFrYXI7TU9VTU5JOzIwMjQtMTAtMTc7MDk6MzY6MTUgQU07MTsyMzg0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, x, i, s" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <assign variable="s" expression="0"/>
+            <for variable="i" start="0" end="n - 1" direction="inc" step="1">
+                <input variable="x"/>
+                <assign variable="s" expression="s + x"/>
+            </for>
+            <output expression="s / n" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

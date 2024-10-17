@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="algo2"/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-15 04:04:42 PM"/>
+        <attribute name="created" value="dXNlcjtERVNLVE9QLTVWRkE3NTk7MjAyNC0xMC0xNTswMzoxNTo0MSBQTTsyNzQy"/>
+        <attribute name="edited" value="dXNlcjtERVNLVE9QLTVWRkE3NTk7MjAyNC0xMC0xNTswNDowNDo0MiBQTTsxOzI4NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="somme" type="Integer" array="False" size=""/>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <assign variable="somme" expression="a+b"/>
+            <output expression="somme" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

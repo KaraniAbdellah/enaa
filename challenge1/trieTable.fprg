@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ETAPE5"/>
+        <attribute name="authors" value="zakar"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-16 12:32:21 PM"/>
+        <attribute name="created" value="emFrYXI7TU9VTU5JOzIwMjQtMTAtMTY7MTE6NTk6NDEgQU07MjI3Mg=="/>
+        <attribute name="edited" value="emFrYXI7TU9VTU5JOzIwMjQtMTAtMTY7MTI6MzI6MjEgUE07MjsyMzg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="I, J, N, TEMP" type="Integer" array="False" size=""/>
+            <input variable="N"/>
+            <declare name="L" type="Integer" array="True" size="N"/>
+            <for variable="I" start="0" end="N - 1" direction="inc" step="1">
+                <input variable="L[I]"/>
+            </for>
+            <output expression="5" newline="True"/>
+            <for variable="I" start="0" end="N - 1" direction="inc" step="1">
+                <for variable="J" start="0" end="N - I - 1" direction="inc" step="1">
+                    <if expression="L[J] &lt; L[J + 1]">
+                        <then>
+                            <assign variable="TEMP" expression="L[J]"/>
+                            <assign variable="L[J]" expression="L[J + 1]"/>
+                            <assign variable="L[J + 1]" expression="TEMP"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <for variable="I" start="0" end="N - 1" direction="inc" step="1">
+                <output expression="L[I]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

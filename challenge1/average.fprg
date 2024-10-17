@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="average"/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-17 09:05:54 AM"/>
+        <attribute name="created" value="dXNlcjtERVNLVE9QLTVWRkE3NTk7MjAyNC0xMC0xNzswODo1OToxMiBBTTsyNzQw"/>
+        <attribute name="edited" value="dXNlcjtERVNLVE9QLTVWRkE3NTk7MjAyNC0xMC0xNzswOTowNTo1NCBBTTsxOzI4NDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <assign variable="count" expression="0"/>
+            <declare name="number" type="Integer" array="False" size=""/>
+            <declare name="sum" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <declare name="average" type="Integer" array="False" size=""/>
+            <while expression="count&lt;5">
+                <input variable="number"/>
+                <assign variable="sum" expression="sum+number"/>
+                <assign variable="count" expression="count+1"/>
+            </while>
+            <assign variable="average" expression="sum/count"/>
+            <output expression="&quot;the average is&quot;&amp; average" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

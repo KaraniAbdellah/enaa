@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="small to larg"/>
+        <attribute name="authors" value="ULTRAPC"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-15 10:43:33 PM"/>
+        <attribute name="created" value="VUxUUkFQQztKVVVCVVU7MjAyNC0xMC0xNTswOTo1MjowMSBQTTsyMjk1"/>
+        <attribute name="edited" value="VUxUUkFQQztKVVVCVVU7MjAyNC0xMC0xNTsxMDo0MzozMyBQTTsxOzI0MDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i, j" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="5"/>
+            <declare name="data" type="Integer" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;enter number&quot; &amp; (i+1) &amp; &quot;:&quot;" newline="True"/>
+                <input variable="data[i]"/>
+            </for>
+            <output expression="&quot;Unsorted numbers [&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot; &quot;&amp;data[i]" newline="True"/>
+            </for>
+            <output expression="&quot; ]&quot;" newline="True"/>
+            <declare name="MIN, MAX" type="Integer" array="False" size=""/>
+            <assign variable="MIN" expression="99999"/>
+            <assign variable="MAX" expression="-99999"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <if expression="data[i]&gt;MAX">
+                    <then>
+                        <assign variable="MAX" expression="data[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="data[i] &lt; MIN">
+                    <then>
+                        <assign variable="MIN" expression="data[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <declare name="nCount" type="Integer" array="False" size=""/>
+            <assign variable="nCount" expression="MAX - MIN + 1"/>
+            <declare name="arrCount" type="Integer" array="True" size="nCount"/>
+            <for variable="i" start="0" end="nCount-1" direction="inc" step="1">
+                <assign variable="arrCount[i]" expression="0"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <declare name="value" type="Integer" array="False" size=""/>
+                <assign variable="value" expression="data[i]"/>
+                <assign variable="j" expression="value - MIN"/>
+                <assign variable="arrCount[j]" expression="arrCount[j]+1"/>
+            </for>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <assign variable="k" expression="0"/>
+            <for variable="i" start="0" end="nCount-1" direction="inc" step="1">
+                <if expression="arrCount[i]&gt;0">
+                    <then>
+                        <declare name="nK" type="Integer" array="False" size=""/>
+                        <assign variable="nk" expression="arrCount[i]"/>
+                        <declare name="value" type="Integer" array="False" size=""/>
+                        <assign variable="value" expression="MIN + i"/>
+                        <for variable="j" start="1" end="nK" direction="inc" step="1">
+                            <assign variable="data[k]" expression="value"/>
+                            <assign variable="k" expression="k+1"/>
+                        </for>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;sorted numbers [&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot; &quot;&amp;data[i]" newline="True"/>
+            </for>
+            <output expression="&quot; ]&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
