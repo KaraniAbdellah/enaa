@@ -17,7 +17,7 @@ int main() {
 	printf("Enter Your Choice : ");
 	scanf("%d", &choice);
 	
-	long long int result;
+	long long int result
 	switch(choice) {
 		case 1: {
 			result = year * 12; printf("%d = %lld mois\n", year, result); break;
