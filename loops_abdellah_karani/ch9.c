@@ -12,19 +12,17 @@ int main() {
 	printf("Enter a number: ");
 	scanf("%d", &n);
 	
-	int i = 0;
-	for (int i = n; i >= 0; i--) {
-		int check = 0;
-		for (int j = 0; j < n; j++) {
-			if (i * j == n) {
+	int i, j;
+	// find the exposant and the base
+	for (i = 1; i <= n; i++) {
+		int p = i;
+		for (j = 1; j <= n; j++) {
+			if (p == n) {
 				printf("%d ** %d\n", i, j);
-				check = 1;
-				break;
 			}
+			p = p * i;		
 		}
-		if (check == 1) break;
 	}
-	
 	
 	return 0;
 }
