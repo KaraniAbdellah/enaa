@@ -20,7 +20,7 @@ typedef struct Personne {
 int main() {
 
 	int n;
-	printf("Ecrit le nomber des personnes: ");
+	printf("Ecrit le nombre des personnes: ");
 	scanf("%d", &n);	
 	Personne personnes[n];
 	
@@ -50,8 +50,6 @@ int main() {
 		printf("ville: %s\n", personnes[i].adrs.ville);
 		printf("code_postal: %d\n", personnes[i].adrs.code_postal);
 	}
-	
-	
 	
 	
 	return 0;
