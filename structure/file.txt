@@ -1,0 +1,21 @@
+# Introduction & setup
+	## definition
+		a Makefile is a script used to automate the compilation process. 
+		It defines rules for building and linking your code files, 
+		making it easy to compile a program by just running make
+	## setup
+		in linux: "sudo apt install make"
+		in windows: MinGW already include make
+	## create file
+		you list create a file named: makefile || Makefile, in your project
+
+
+# 📌 1. Basic Makefile Structure
+	each makefile has this structure:
+		
+
+
+
+
+
+
