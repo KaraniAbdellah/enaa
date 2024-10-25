@@ -48,54 +48,56 @@ variables store values, and we call it using $(varName).
 <b>Exemple</b>
 
 ```bash
-	NAME = main
-	CC = gcc
-	CFLAGS = -Werror -Wextra -Wall
-	SRC = main.c test.c 
-	OBJ = $(SRC:%.c=%.o)
+NAME = main
+CC = gcc
+CFLAGS = -Werror -Wextra -Wall
+SRC = main.c test.c 
+OBJ = $(SRC:%.c=%.o)
 
 
-	build: $(OBJ)
-		$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+build: $(OBJ)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 ```
 
 <b>Output</b>
 
 ```bash
-	gcc -Werror -Wextra -Wall   -c -o test.o test.c
-	gcc -Werror -Wextra -Wall main.c test.c  -o main
+gcc -Werror -Wextra -Wall   -c -o test.o test.c
+gcc -Werror -Wextra -Wall main.c test.c  -o main
 ```
 
 # 📌 3. Pattern Rules
-	each pattern start with <code>%</code, and allow you to define 
-	implicit rules for building targets based on thier names
+each pattern start with <code>%</code, and allow you to define 
+implicit rules for building targets based on thier names
 
 
-	<b>Example</b>
-	``` bash
-		%.o: %.c
-		echo "Hello World"
-	```
-	
-	<b>%.o:</b> represents any file with the .o extension (object file).
-	<b>%.c:</b> represents any file with the .c extension (C source file).	 
+<b>Example</b>
+
+``` bash
+	%.o: %.c
+	echo "Hello World"
+```
+
+<b>%.o:</b> represents any file with the .o extension (object file).
+<b>%.c:</b> represents any file with the .c extension (C source file).	 
 
 
-📌 4. Automatic Variables
-	Here are a few automatic variables often used in Makefiles:
+# 📌 4. Automatic Variables
 
-	$@: The target name.
-	$<: The first dependency.
-	$^: All dependencies.
+Here are a few automatic variables often used in Makefiles:
 
-	<b>Exemple</b>
-	
-	``` bash
-		my_program: main.o utils.o
-    	gcc -o $@ $^
-	```
-	
-	In this case, **$@** expands to my_program, and **$^** expands to main.o utils.o.
+`$@`: The target name.
+`$<`: The first dependency.
+`$^`: All dependencies.
+
+<b>Exemple</b>
+
+``` bash
+my_program: main.o utils.o
+gcc -o $@ $^
+```
+
+In this case, **$@** expands to my_program, and **$^** expands to main.o utils.o.
 
 
 "The Power of make file he compile just the changed filies"
