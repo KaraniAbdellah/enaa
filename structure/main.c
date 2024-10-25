@@ -166,7 +166,9 @@ int main() {
 		} 
 		else if (choix == 0) {
 			exit(0);
-		} else;
+		} else {
+			
+		}
 	} while(choix != 0);
 	
 	

@@ -1,16 +1,12 @@
-# syntax:
-	# target: dependencies
-    # commands
-
-build: 
-	gcc main.c -o main
-
-
-test: 
-	echo "Hello World"s
+NAME = main
+CC = gcc
+CFLAGS = -Werror -Wextra -Wall
+SRC = main.c test.c 
+OBJ = $(SRC:%.c=%.o)
 
 
-
+build: $(OBJ)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 
 
