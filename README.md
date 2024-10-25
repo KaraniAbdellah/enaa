@@ -14,28 +14,28 @@ You should create a file named `makefile` or `Makefile` in your project.
 
 
 # 📌 1. Basic Makefile Structure
-	each makefile has this structure:
+each makefile has this structure:
 	
-	``` bash
-		target: dependencies
-				commands
-	```
+```bash
+target: dependencies
+	commands
+```
 	
 	<b>Example</b>
-	
-	``` bash
-		build: test
-			gcc main.c -o main
-		test: 
-			echo "Hello World"
-	```
+
+``` bash
+build: test
+gcc main.c -o main
+test: 
+echo "Hello World"
+```
 	<b>Output</b>
-	``` bash
-		$ make
-		echo "Hello World"
-		Hello Worlds
-		gcc main.c -o main
-	```
+```bash
+$ make
+echo "Hello World"
+Hello Worlds
+gcc main.c -o main
+```
 	Note: for <code>target</code> can be label like "build" or filies
 
 	
@@ -43,7 +43,7 @@ You should create a file named `makefile` or `Makefile` in your project.
 variables store values, and we call it using $(varName).
 
 <b>Exemple</b>
-``` bash
+```bash
 	NAME = main
 	CC = gcc
 	CFLAGS = -Werror -Wextra -Wall
@@ -57,7 +57,7 @@ variables store values, and we call it using $(varName).
 
 <b>Output</b>
 
-``` bash
+```bash
 	gcc -Werror -Wextra -Wall   -c -o test.o test.c
 	gcc -Werror -Wextra -Wall main.c test.c  -o main
 ```
