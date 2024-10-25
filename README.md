@@ -21,7 +21,7 @@ target: dependencies
 	commands
 ```
 	
-	<b>Example</b>
+<b>Example</b>
 
 ``` bash
 build: test
@@ -29,20 +29,24 @@ gcc main.c -o main
 test: 
 echo "Hello World"
 ```
-	<b>Output</b>
+
+<b>Output</b>
+
 ```bash
 $ make
 echo "Hello World"
 Hello Worlds
 gcc main.c -o main
 ```
-	Note: for <code>target</code> can be label like "build" or filies
+
+Note: for <code>target</code> can be label like "build" or filies
 
 	
 # 📌 2. Variables in Makefile
 variables store values, and we call it using $(varName).
 
 <b>Exemple</b>
+
 ```bash
 	NAME = main
 	CC = gcc
@@ -72,6 +76,7 @@ variables store values, and we call it using $(varName).
 		%.o: %.c
 		echo "Hello World"
 	```
+	
 	<b>%.o:</b> represents any file with the .o extension (object file).
 	<b>%.c:</b> represents any file with the .c extension (C source file).	 
 
@@ -84,13 +89,13 @@ variables store values, and we call it using $(varName).
 	$^: All dependencies.
 
 	<b>Exemple</b>
+	
 	``` bash
 		my_program: main.o utils.o
     	gcc -o $@ $^
 	```
 	
 	In this case, **$@** expands to my_program, and **$^** expands to main.o utils.o.
-
 
 
 "The Power of make file he compile just the changed filies"
