@@ -67,7 +67,8 @@ gcc -Werror -Wextra -Wall main.c test.c  -o main
 ```
 
 # 📌 3. Pattern Rules
-each pattern start with <code>%</code, and allow you to define 
+
+each pattern start with `%`, and allow you to define 
 implicit rules for building targets based on thier names
 
 
@@ -78,8 +79,8 @@ implicit rules for building targets based on thier names
 	echo "Hello World"
 ```
 
-<b>%.o:</b> represents any file with the .o extension (object file).
-<b>%.c:</b> represents any file with the .c extension (C source file).	 
+`%.o:` represents any file with the .o extension (object file).
+`%.c:` represents any file with the .c extension (C source file).	 
 
 
 # 📌 4. Automatic Variables
