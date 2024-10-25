@@ -24,7 +24,7 @@ Personne personnes[100];
 // Affichage Des Informations
 void affichage(int size, Personne personnes[size]) {
 	
-	if (size == -1 || size == 0) {
+	if (size == 0) {
 		printf("----------------\n");
 		printf("Aucun Personne\n");
 		printf("----------------\n");
@@ -41,15 +41,16 @@ void affichage(int size, Personne personnes[size]) {
 		printf("ville: %s\n", personnes[i].adrs.ville);
 		printf("code_postal: %d\n", personnes[i].adrs.code_postal);
 	}
+	printf("-----------------");
 	
 } 
 
 
 // Remplissage Des Informations
-void remplissage(int size, Personne personnes[size]) {
-
-	for (int i = 0; i < size; i++) {
-		printf("------Personne %d------\n", i + 1);
+void remplissage(int size, int personn_nbr, Personne personnes[size]) {
+	
+	for (int i = size; i < personn_nbr + size; i++) {
+		printf("------ Personne %d------\n", i + 1);
 		printf("Voter nom: ");
 		scanf("%s", personnes[i].nom);
 		printf("Voter age: ");
@@ -67,12 +68,12 @@ void remplissage(int size, Personne personnes[size]) {
 // Menu
 void menu() {
 
-	printf("==========================menu==========================\n");
-	printf("1. Remplissage Des Information\n");
-	printf("2. Affichage Des Information\n");
-	printf("3. Modifier Des Information\n");
-	printf("4. Supprimer Des Information\n");
-	printf("0. exit\n");
+	printf("\n========================== MENU ==========================\n\n");
+	printf("1. 📜  Remplissage Des Information\n");
+	printf("2. 📋  Affichage Des Information\n");
+	printf("3. 🖊️  Modifier Des Information\n");
+	printf("4. 🗑️  Supprimer Des Information\n");
+	printf("0. 🚪  Quitter\n");
 	
 }
 
@@ -102,6 +103,7 @@ void modification(int size, Personne personnes[size]) {
 	scanf("%s", personnes[nbr_personne - 1].adrs.ville);
 	printf("Voter code_postal: ");
 	scanf("%d", &personnes[nbr_personne - 1].adrs.code_postal);
+	printf("✅ Bien modifier\n");
 	
 }
 
@@ -109,7 +111,7 @@ void modification(int size, Personne personnes[size]) {
 void supperssion(int *size, Personne personnes[*size]) {
 	
 	int nbr_personne;
-	printf("Enter le nombre de perssone qui tu doit supperimer: ");
+	printf("Enter le nombre de perssone qui tu doit supprimer: ");
 	scanf("%d", &nbr_personne);
 	
 	if (nbr_personne <= 0 || nbr_personne > *size) {
@@ -129,6 +131,7 @@ void supperssion(int *size, Personne personnes[*size]) {
 		strcpy(personnes[i].adrs.ville, personnes[i + 1].adrs.ville);
 	}
 	*size -= 1;
+	printf("\n✅ Bein Supprimer");
 	
 }
 
@@ -136,24 +139,34 @@ void supperssion(int *size, Personne personnes[*size]) {
 int main() {
 	
 	int choix;
-	int size = -1;
+	int size = 0;
+	int n_person;
 	do {
+		
 		menu();
-		printf("Enter votre choix: ");
-		scanf("%d", &choix);
+		do {
+			printf("Enter votre choix: ");
+			scanf("%d", &choix);
+		} while(choix != 1 && choix != 2 && choix != 3 && choix != 4 && choix != 0);
+		
 		if (choix == 1) {
 			printf("Enterez le nombre des personnes: ");
-			scanf("%d", &size);
-			remplissage(size, personnes);
-		} else if (choix == 2) {
-			affichage(size, personnes);
-		} else if (choix == 3) {
-			modification(size, personnes);
-		} else if (choix == 4) {
-			supperssion(&size, personnes);
-		} else if (choix == 0) {
-			exit(0);
+			scanf("%d", &n_person);
+			remplissage(size, n_person, personnes);
+			size += n_person;
 		}
+		else if (choix == 2) {
+			affichage(size, personnes);
+		} 
+		else if (choix == 3) {
+			modification(size, personnes);
+		} 
+		else if (choix == 4) {
+			supperssion(&size, personnes);
+		} 
+		else if (choix == 0) {
+			exit(0);
+		} else;
 	} while(choix != 0);
 	
 	
