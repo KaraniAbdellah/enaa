@@ -91,7 +91,7 @@ Here are a few automatic variables often used in Makefiles:
 	<li>`$@`: The target name.</li>
 	<li>`$<`: The first dependency.</li>
 	<li>`$^`: All dependencies.</li>
-<ul>
+</ul>
 
 <b>Exemple</b>
 
