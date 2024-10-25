@@ -75,8 +75,8 @@ implicit rules for building targets based on thier names
 <b>Example</b>
 
 ``` bash
-	%.o: %.c
-	echo "Hello World"
+%.o: %.c
+echo "Hello World"
 ```
 
 `%.o:` represents any file with the .o extension (object file).
@@ -98,8 +98,7 @@ my_program: main.o utils.o
 gcc -o $@ $^
 ```
 
-In this case, **$@** expands to my_program, and **$^** expands to main.o utils.o.
-
+In this case, `$@` expands to my_program, and `$^` expands to main.o utils.o.
 
 "The Power of make file he compile just the changed filies"
 
