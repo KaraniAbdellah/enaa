@@ -87,9 +87,11 @@ echo "Hello World"
 
 Here are a few automatic variables often used in Makefiles:
 
-`$@`: The target name.
-`$<`: The first dependency.
-`$^`: All dependencies.
+<ul>
+	<li>`$@`: The target name.</li>
+	<li>`$<`: The first dependency.</li>
+	<li>`$^`: All dependencies.</li>
+<ul>
 
 <b>Exemple</b>
 
